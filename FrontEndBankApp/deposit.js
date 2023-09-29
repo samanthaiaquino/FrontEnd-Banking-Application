@@ -28,7 +28,7 @@ function Deposit() {
 
   return (
     <Card
-      bgcolor="primary"
+      bgcolor="success"
       header="Deposit Funds"
       status={status}
       body={show ? (
