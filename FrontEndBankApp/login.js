@@ -34,7 +34,7 @@ function Login() {
 
   return (
     <Card
-      bgcolor="primary"
+      bgcolor="success"
       header="Create Account"
       status={status}
       body={show ? (
