@@ -18,14 +18,22 @@ function Withdraw() {
 
   function handleWithdrawal() {
     if (!validate(withdrawalAmount, 'withdrawal amount')) return;
-
-    if (withdrawalAmount > balance) {
+	 const data = ctx.users.find(user => user.balance !=null); 
+  
+    if (withdrawalAmount > data.balance) {
       setStatus('Error: Insufficient funds');
       setTimeout(() => setStatus(''), 3000);
       return;
     }
-
+	
+   else if (data) {
+	  
+	    data.balance -= withdrawalAmount;
+  }else{
+	  console.log('no user');
+  }
     setBalance(balance - withdrawalAmount);
+
     setWithdrawalAmount(0);
   }
 

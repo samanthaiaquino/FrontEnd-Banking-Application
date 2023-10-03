@@ -18,7 +18,15 @@ function Deposit() {
   function handleDeposit() {
     if (!validate(depositAmount, 'deposit amount')) return;
     setBalance(balance + depositAmount);
-    setDepositAmount(0);
+  const userToUpdate = ctx.users.find(user => user.balance !=null); 
+  if (userToUpdate) {
+	  
+	    userToUpdate.balance += depositAmount;
+      setDepositAmount(0);
+  }else{
+	  console.log('no user');
+  }
+
   }
 
   function clearForm() {
