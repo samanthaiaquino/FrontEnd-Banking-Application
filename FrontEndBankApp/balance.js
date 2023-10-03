@@ -1,6 +1,13 @@
 function Balance(){
+const ctx = React.useContext(UserContext);
+
   return (
-    <h1>Balance</h1>
-  )
+    <div>
+      <h1>Balance</h1>
+      <p>Your current balance is: ${ctx.users[0].balance}</p>
+    </div>
+  );
 }
+
+
 
